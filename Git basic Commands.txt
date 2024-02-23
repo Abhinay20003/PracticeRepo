@@ -1,0 +1,99 @@
+1. for initializing git:-
+	git init
+
+2. tracked and untracked files:-
+	git status
+
+3. add untracked files:-
+		git add .
+
+4. for commit:-
+		git commit -m "CommitMessage"
+		
+5. To restore Staged files:-
+		git restore --staged file.txt
+
+6. For Logs:-
+	git log
+	
+7. to remove files:-
+	rm -rf file.txt
+
+8. To remove the old commits,Select the commit that is below the remmoving commit:-
+	git reset gitcommitcode
+	
+
+-> stach area:-
+1. git add.
+2. git status
+3. touch surnames.txt
+4. git add.
+5. git status
+6. vim surnames.txt
+7. git stash
+8. git status
+9. git log
+10. git stash pop:- backstage area files comeout
+11. git add.
+12. git stash
+13. git stash clear:- to remove
+	
+	
+-> Github:=
+
+1. Create a new Repository in git hub.
+2. create a new folder/file.
+3. right click &  git bash  there in folder
+4. If need change the branch or not need (Master)
+5. git add.
+6. git status
+7. git commit -m "commit msg"
+8. git status
+9. git remote add origin "gitlink of repo"
+10. git push origin master/(branch name)
+
+-> To create new Branch:-
+
+1. git branch newbranchname
+2. git checkout newbranchname
+3. git commit
+
+To exit from newbranchname
+1. git checkout mainbranch
+2. git commit
+
+If the new branch is finalized we can merge it with main branch 
+1. git merge newbranchname
+
+
+-> To fork from project:-
+
+1. Fork: to your account
+2. from code area: get the clone link
+3. git bash from the folder u want to run code
+4. git clone "https://github......."
+git remote -v :-Git repositories will have just one remote
+5. git branch newbranchname
+6. git checkout newbranchname
+7. git add.
+8. git status
+9. git commit -m "commit msg"
+10. git status
+11. git push origin master/(branch name)
+
+To add upstream link :-
+
+1. git remote add upstream "https://github......."
+
+-> To get the latest changes to ur remote branch
+1. git checkout main
+2. git remote add upstream "https://github......."
+3. git fetch upstream
+4. git checkout main
+5. git merge upstream/branchname(i.e main)
+6. git push origin main
+
+To pull:-
+1. git fetch origin
+2. git merge origin/<branch_name>
+3. git pull origin <branch_name>
