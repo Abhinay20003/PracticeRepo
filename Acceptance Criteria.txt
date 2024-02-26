@@ -1,0 +1,42 @@
+Acceptance criteria:-
+
+While user stories aim to describe what the user wants the system to do, the goal of acceptance criteria is to explain the conditions a specific user story must satisfy.
+
+def:- Acceptance criteria (AC) are the conditions a software product must meet to be accepted by a user, a customer, or other systems. 
+
+They are unique for each user story and define the feature behavior from the end-user’s perspective.
+
+It's important to note that acceptance criteria describe what the end result should be, not the process of achieving it.
+
+Well-written acceptance criteria help avoid unexpected results at the end of a development stage and ensure that all stakeholders and users are satisfied with what they get.
+
+eg:-
+
+As a restaurant customer, I want to reserve a table online, so I can ensure I have a place to eat at my preferred time.
+
+Acceptance criteria: 
+The system should show available times for reservations. 
+After reservation, the customer should receive a confirmation.
+
+
+Good acceptance criteria should possess specific qualities:-
+
+Clarity: They should be straightforward and easy to understand for all team members, avoiding any confusion.
+
+Conciseness: The criteria should communicate the necessary information without unnecessary detail.
+
+Testability: Each criterion must be verifiable, allowing testers to clearly determine whether it has been met.
+
+Result-oriented: The focus should be on delivering results that satisfy the customer, emphasizing the end benefit or value.
+
+* Another important aspect regarding acceptance criteria is that they must be defined before the development team starts working on a particular user story. Otherwise, there’s a decent chance the deliverables won’t meet the needs and expectations of a client. 
+
+* A Process You Can Use to Create Acceptance Criteria:-
+Some of the opportunities for defining acceptance criteria include:
+
+Discussions with customers or clients
+Discussions with stakeholders
+During product backlog refinement
+During the scrum sprint planning event
+In team brainstorming
+After evaluating customer or end-user feedback

@@ -1,0 +1,57 @@
+import java.util.Stack;
+
+public class Stackcls<T> {
+    private Stack<T> stack;
+
+    // Constructor
+    public Stackcls() {
+        this.stack = new Stack<>();
+    }
+
+    // Method to push an element onto the stack
+    public void push(T item) {
+        stack.push(item);
+    }
+
+    // Method to pop an element from the stack
+    public T pop() {
+        return stack.pop();
+    }
+
+    // Method to peek the top element of the stack
+    public T peek() {
+        return stack.peek();
+    }
+
+    // Method to check if the stack is empty
+    public boolean isEmpty() {
+        return stack.isEmpty();
+    }
+
+    // Method to get the size of the stack
+    public int size() {
+        return stack.size();
+    }
+
+    // Method to print the elements of the stack
+    public void printStack() {
+        System.out.println("Stack elements:");
+        for (T item : stack) {
+            System.out.println(item);
+        }
+    }
+
+    public static void main(String[] args) {
+        Stackcls<Integer> stack = new Stackcls<>();
+
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.printStack(); // Output: Stack elements: 3 2 1
+
+        System.out.println("Pop: " + stack.pop()); // Output: Pop: 3
+        System.out.println("Peek: " + stack.peek()); // Output: Peek: 2
+        System.out.println("Size: " + stack.size()); // Output: Size: 2
+        System.out.println("Is empty? " + stack.isEmpty()); // Output: Is empty? false
+    }
+}
