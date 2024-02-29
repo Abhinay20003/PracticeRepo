@@ -1,0 +1,178 @@
+<html>
+<head>
+<title>BMICalculatorTest.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+BMICalculatorTest.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">healthycoderapp</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">Test</span><span class="s2">;</span>
+
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">function</span><span class="s2">.</span><span class="s1">Executable</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">params</span><span class="s2">.</span><span class="s1">ParameterizedTest</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">params</span><span class="s2">.</span><span class="s1">provider</span><span class="s2">.</span><span class="s1">CsvFileSource</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">params</span><span class="s2">.</span><span class="s1">provider</span><span class="s2">.</span><span class="s1">CsvSource</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">params</span><span class="s2">.</span><span class="s1">provider</span><span class="s2">.</span><span class="s1">ValueSource</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">Duration</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">ArrayList</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+
+<span class="s0">import static </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">Assertions</span><span class="s2">.*;</span>
+
+<span class="s0">class </span><span class="s1">BMICalculatorTest </span><span class="s2">{</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">should_ReturnTrue_When_DietRecommended</span><span class="s2">() {</span>
+        <span class="s3">//given</span>
+        <span class="s0">double </span><span class="s1">weight </span><span class="s2">= </span><span class="s4">89.0</span><span class="s2">;</span>
+        <span class="s0">double </span><span class="s1">height </span><span class="s2">= </span><span class="s4">1.72</span><span class="s2">;</span>
+        <span class="s3">// When</span>
+        <span class="s0">boolean </span><span class="s1">recommended </span><span class="s2">= </span><span class="s1">BMICalculator</span><span class="s2">.</span><span class="s1">isDietRecommended</span><span class="s2">(</span><span class="s1">weight</span><span class="s2">, </span><span class="s1">height</span>
+        <span class="s2">);</span>
+
+        <span class="s3">//Then</span>
+        <span class="s1">assertTrue</span><span class="s2">(</span><span class="s1">recommended</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+    <span class="s3">//   void test(){</span>
+<span class="s3">//        assertTrue(</span>
+<span class="s3">//                BMICalculator.isDietRecommended(81.2,1.65)</span>
+<span class="s3">//        );</span>
+    <span class="s3">// }// This is shortcut for code</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">should_ReturnFalse_When_DietNotRecommended</span><span class="s2">() {</span>
+        <span class="s3">//given</span>
+        <span class="s0">double </span><span class="s1">weight </span><span class="s2">= </span><span class="s4">50.0</span><span class="s2">;</span>
+        <span class="s0">double </span><span class="s1">height </span><span class="s2">= </span><span class="s4">1.72</span><span class="s2">;</span>
+        <span class="s3">// When</span>
+        <span class="s0">boolean </span><span class="s1">recommended </span><span class="s2">= </span><span class="s1">BMICalculator</span><span class="s2">.</span><span class="s1">isDietRecommended</span><span class="s2">(</span><span class="s1">weight</span><span class="s2">, </span><span class="s1">height</span>
+        <span class="s2">);</span>
+
+        <span class="s3">//Then</span>
+        <span class="s1">assertFalse</span><span class="s2">(</span><span class="s1">recommended</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">should_ThrowArithmetic_When_HeightZero</span><span class="s2">() {</span>
+        <span class="s3">//given</span>
+        <span class="s0">double </span><span class="s1">weight </span><span class="s2">= </span><span class="s4">50.0</span><span class="s2">;</span>
+        <span class="s0">double </span><span class="s1">height </span><span class="s2">= </span><span class="s4">0.00</span><span class="s2">;</span>
+        <span class="s3">// When</span>
+        <span class="s1">Executable executable </span><span class="s2">= () </span><span class="s1">-&gt; BMICalculator</span><span class="s2">.</span><span class="s1">isDietRecommended</span><span class="s2">(</span><span class="s1">weight</span><span class="s2">, </span><span class="s1">height</span><span class="s2">);</span>
+
+        <span class="s3">//Then</span>
+        <span class="s1">assertThrows</span><span class="s2">(</span><span class="s1">ArithmeticException</span><span class="s2">.</span><span class="s0">class</span><span class="s2">, </span><span class="s1">executable</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">should_ReturnWorstBMI</span><span class="s2">() {</span>
+        <span class="s3">//given</span>
+        <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Coder</span><span class="s2">&gt; </span><span class="s1">coders </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">coders</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Coder</span><span class="s2">(</span><span class="s4">1.80</span><span class="s2">, </span><span class="s4">60.0</span><span class="s2">));</span>
+        <span class="s1">coders</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Coder</span><span class="s2">(</span><span class="s4">1.82</span><span class="s2">, </span><span class="s4">98.0</span><span class="s2">));</span>
+        <span class="s1">coders</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Coder</span><span class="s2">(</span><span class="s4">1.82</span><span class="s2">, </span><span class="s4">64.7</span><span class="s2">));</span>
+        <span class="s3">// When</span>
+        <span class="s1">Coder coderWorstBmi </span><span class="s2">= </span><span class="s1">BMICalculator</span><span class="s2">.</span><span class="s1">findCoderWithWorstBMI</span><span class="s2">(</span><span class="s1">coders</span><span class="s2">);</span>
+
+        <span class="s3">//Then</span>
+        <span class="s1">assertAll</span><span class="s2">(</span>
+                <span class="s2">() </span><span class="s1">-&gt; assertEquals</span><span class="s2">(</span><span class="s4">1.82</span><span class="s2">, </span><span class="s1">coderWorstBmi</span><span class="s2">.</span><span class="s1">getHeight</span><span class="s2">()),</span>
+                <span class="s2">() </span><span class="s1">-&gt; assertEquals</span><span class="s2">(</span><span class="s4">98.0</span><span class="s2">, </span><span class="s1">coderWorstBmi</span><span class="s2">.</span><span class="s1">getWeight</span><span class="s2">())</span>
+        <span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">should_ReturnNull_When_WorstBMI</span><span class="s2">() {</span>
+        <span class="s3">//given</span>
+        <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Coder</span><span class="s2">&gt; </span><span class="s1">coders </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+
+        <span class="s3">// When</span>
+        <span class="s1">Coder coderWorstBmi </span><span class="s2">= </span><span class="s1">BMICalculator</span><span class="s2">.</span><span class="s1">findCoderWithWorstBMI</span><span class="s2">(</span><span class="s1">coders</span><span class="s2">);</span>
+
+        <span class="s3">//Then</span>
+        <span class="s1">assertNull</span><span class="s2">(</span><span class="s1">coderWorstBmi</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">should_ReturnBMIScores_BMI</span><span class="s2">() {</span>
+        <span class="s3">//given</span>
+        <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">Coder</span><span class="s2">&gt; </span><span class="s1">coders </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">coders</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Coder</span><span class="s2">(</span><span class="s4">1.80</span><span class="s2">, </span><span class="s4">60.0</span><span class="s2">));</span>
+        <span class="s1">coders</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Coder</span><span class="s2">(</span><span class="s4">1.82</span><span class="s2">, </span><span class="s4">98.0</span><span class="s2">));</span>
+        <span class="s1">coders</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Coder</span><span class="s2">(</span><span class="s4">1.82</span><span class="s2">, </span><span class="s4">64.7</span><span class="s2">));</span>
+        <span class="s0">double</span><span class="s2">[] </span><span class="s1">exec </span><span class="s2">= {</span><span class="s4">18.52</span><span class="s2">, </span><span class="s4">29.59</span><span class="s2">, </span><span class="s4">19.53</span><span class="s2">};</span>
+
+        <span class="s3">// When</span>
+        <span class="s0">double</span><span class="s2">[] </span><span class="s1">bmiScores </span><span class="s2">= </span><span class="s1">BMICalculator</span><span class="s2">.</span><span class="s1">getBMIScores</span><span class="s2">(</span><span class="s1">coders</span><span class="s2">);</span>
+
+        <span class="s3">//Then</span>
+        <span class="s1">assertArrayEquals</span><span class="s2">(</span><span class="s1">exec</span><span class="s2">, </span><span class="s1">bmiScores</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s1">@ParameterizedTest</span>
+    <span class="s1">@ValueSource</span><span class="s2">(</span><span class="s1">doubles </span><span class="s2">= {</span><span class="s4">80.0</span><span class="s2">,</span><span class="s4">89.0</span><span class="s2">,</span><span class="s4">95.0</span><span class="s2">,</span><span class="s4">110.0</span><span class="s2">})</span>
+    <span class="s0">void </span><span class="s1">Should_ReturnTrue</span><span class="s2">(</span><span class="s1">Double coderWeight</span><span class="s2">) {   </span><span class="s3">//one parameter i.e for weight</span>
+        <span class="s3">//given</span>
+        <span class="s0">double </span><span class="s1">weight </span><span class="s2">= </span><span class="s1">coderWeight</span><span class="s2">;</span><span class="s3">//coderWeight takes values one by one from doubles 80.0,89.0,95.0,110.0</span>
+        <span class="s0">double </span><span class="s1">height </span><span class="s2">= </span><span class="s4">1.72</span><span class="s2">;</span>
+        <span class="s3">//when</span>
+        <span class="s0">boolean </span><span class="s1">recommended </span><span class="s2">= </span><span class="s1">BMICalculator</span><span class="s2">.</span><span class="s1">isDietRecommended</span><span class="s2">(</span><span class="s1">weight</span><span class="s2">, </span><span class="s1">height</span><span class="s2">);</span>
+        <span class="s3">//then</span>
+        <span class="s1">assertTrue</span><span class="s2">(</span><span class="s1">recommended</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+    <span class="s1">@ParameterizedTest</span><span class="s2">(</span><span class="s1">name</span><span class="s2">=</span><span class="s5">&quot;weight={0},height={1}&quot;</span><span class="s2">)</span>
+    <span class="s1">@CsvSource</span><span class="s2">(</span><span class="s1">value </span><span class="s2">= {</span><span class="s5">&quot;89.0,1.72&quot;</span><span class="s2">,</span><span class="s5">&quot;95.0,1.75&quot;</span><span class="s2">,</span><span class="s5">&quot;110.0,1.78&quot;</span><span class="s2">})</span>
+    <span class="s0">void </span><span class="s1">Should_ReturnTrue_When_DietRecommend</span><span class="s2">(</span><span class="s1">Double coderWeight</span><span class="s2">,</span><span class="s1">Double coderHeight</span><span class="s2">) {   </span><span class="s3">//Two parameter i.e for weight</span>
+        <span class="s3">//given</span>
+        <span class="s0">double </span><span class="s1">weight </span><span class="s2">= </span><span class="s1">coderWeight</span><span class="s2">;</span><span class="s3">//coderWeight takes values one by one from doubles 80.0,95.0,110.0</span>
+        <span class="s0">double </span><span class="s1">height </span><span class="s2">= </span><span class="s1">coderHeight</span><span class="s2">;</span><span class="s3">//coderHeight takes values one by one from doubles 1.72,1.75,1.78</span>
+        <span class="s3">//when</span>
+        <span class="s0">boolean </span><span class="s1">recommended </span><span class="s2">= </span><span class="s1">BMICalculator</span><span class="s2">.</span><span class="s1">isDietRecommended</span><span class="s2">(</span><span class="s1">weight</span><span class="s2">, </span><span class="s1">height</span><span class="s2">);</span>
+        <span class="s3">//then</span>
+        <span class="s1">assertTrue</span><span class="s2">(</span><span class="s1">recommended</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+
+    <span class="s1">@ParameterizedTest</span><span class="s2">(</span><span class="s1">name</span><span class="s2">=</span><span class="s5">&quot;weight={0},height={1}&quot;</span><span class="s2">)</span>
+    <span class="s1">@CsvFileSource</span><span class="s2">(</span><span class="s1">resources </span><span class="s2">= </span><span class="s5">&quot;/diet-recommended-input-data.csv&quot;</span><span class="s2">,</span><span class="s1">numLinesToSkip </span><span class="s2">= </span><span class="s4">1</span><span class="s2">)</span>
+    <span class="s0">void </span><span class="s1">Should_ReturnTrue_When_DietRecommended</span><span class="s2">(</span><span class="s1">Double coderWeight</span><span class="s2">,</span><span class="s1">Double coderHeight</span><span class="s2">) {   </span><span class="s3">//Two parameter i.e for weight</span>
+        <span class="s3">//given</span>
+        <span class="s0">double </span><span class="s1">weight </span><span class="s2">= </span><span class="s1">coderWeight</span><span class="s2">;</span><span class="s3">//coderWeight takes values one by one from doubles 80.0,95.0,110.0</span>
+        <span class="s0">double </span><span class="s1">height </span><span class="s2">= </span><span class="s1">coderHeight</span><span class="s2">;</span><span class="s3">//coderHeight takes values one by one from doubles 1.72,1.75,1.78</span>
+        <span class="s3">//when</span>
+        <span class="s0">boolean </span><span class="s1">recommended </span><span class="s2">= </span><span class="s1">BMICalculator</span><span class="s2">.</span><span class="s1">isDietRecommended</span><span class="s2">(</span><span class="s1">weight</span><span class="s2">, </span><span class="s1">height</span><span class="s2">);</span>
+        <span class="s3">//then</span>
+        <span class="s1">assertTrue</span><span class="s2">(</span><span class="s1">recommended</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">should_ReturnCoderWithWorstBMIin1ms_When_CoderList10000Elemnts</span><span class="s2">(){</span>
+        <span class="s3">//given</span>
+        <span class="s1">List </span><span class="s2">&lt;</span><span class="s1">Coder</span><span class="s2">&gt; </span><span class="s1">coders</span><span class="s2">=</span><span class="s0">new </span><span class="s1">ArrayList</span><span class="s2">&lt;&gt;();</span>
+        <span class="s0">for</span><span class="s2">(</span><span class="s0">int </span><span class="s1">i</span><span class="s2">=</span><span class="s4">0</span><span class="s2">;</span><span class="s1">i</span><span class="s2">&lt;</span><span class="s4">10000</span><span class="s2">;</span><span class="s1">i</span><span class="s2">++){</span>
+            <span class="s1">coders</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s0">new </span><span class="s1">Coder</span><span class="s2">(</span><span class="s4">1.0</span><span class="s2">+</span><span class="s1">i</span><span class="s2">,</span><span class="s4">10.0</span><span class="s2">+</span><span class="s1">i</span><span class="s2">));</span>
+        <span class="s2">}</span>
+        <span class="s3">//When</span>
+<span class="s1">Executable executable</span><span class="s2">=()</span><span class="s1">-&gt;BMICalculator</span><span class="s2">.</span><span class="s1">findCoderWithWorstBMI</span><span class="s2">(</span><span class="s1">coders</span><span class="s2">);</span>
+        <span class="s3">//then</span>
+        <span class="s1">assertTimeout</span><span class="s2">(</span><span class="s1">Duration</span><span class="s2">.</span><span class="s1">ofMillis</span><span class="s2">(</span><span class="s4">40</span><span class="s2">),</span><span class="s1">executable</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
