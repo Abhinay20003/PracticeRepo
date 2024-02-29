@@ -1,3 +1,18 @@
+What Is Git?
+It is a free, high-quality distributed version control system suitable for tracking modifications in source code in software development. It was originally created as an open-source system for coordinating tasks among programmers, but today it is widely used to track changes in any set of files. The key objectives of Git are as follows:
+
+Speed and efficiency
+Data integrity
+Support for distributed and non-linear workflows
+
+
+
+What Is GitHub?
+It is a web-based Git repository. This hosting service has cloud-based storage. GitHub offers all distributed version control and source code management functionality of Git while adding its own features. It makes it easier to collaborate using Git. 
+
+Additionally, GitHub repositories are open to the public. Developers worldwide can interact and contribute to one another’s code, modify or improve it, making GitHub a networking site for web professionals. The process of interaction and contribution is also called social coding.
+
+
 1. for initializing git:-
 	git init
 
@@ -13,7 +28,7 @@
 5. To restore Staged files:-
 		git restore --staged file.txt
 
-6. For Logs:-
+6. For Logs:- Which we commited we get that logs
 	git log
 	
 7. to remove files:-
@@ -72,7 +87,7 @@ If the new branch is finalized we can merge it with main branch
 2. from code area: get the clone link
 3. git bash from the folder u want to run code
 4. git clone "https://github......."
-git remote -v :-Git repositories will have just one remote
+git remote -v :-Git repositories will have just one remote or many.(see my remote repository.)
 5. git branch newbranchname
 6. git checkout newbranchname
 7. git add.
@@ -93,7 +108,7 @@ To add upstream link :-
 5. git merge upstream/branchname(i.e main)
 6. git push origin main
 
-To pull:-
+To pull:- (They are used to fetch changes from a remote repository)
 1. git fetch origin
 2. git merge origin/<branch_name>
 3. git pull origin <branch_name>
