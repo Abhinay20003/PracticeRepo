@@ -19,7 +19,7 @@ public class DemoApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void triggerMail() throws MessagingException {
-		senderService.sendSimpleEmail("nalbandabhinaykumar@gmail.com", "SHELBY REGISTRATION", "Successfully Registered to SHELBY Application");
+		senderService.sendSimpleEmail("nalbandabhinaykumar@gmail.com", "SHELBY REGISTRATION MSG", "Successfully Registered to SHELBY Application");
 
 	}
 
